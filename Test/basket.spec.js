@@ -1,4 +1,4 @@
-const basket = require('../src/main');
+const Basket = require('../src/Basket');
 const { assertEquals, } = require('./basket.framework');
 let input, actualOutput, expectedOutput, result;
 
@@ -10,8 +10,8 @@ input = {
 }
 expectedOutput = 1
 //Act
-basket.addToBasket(input)
-actualOutput = basket.basketItems.length;
+Basket.addToBasket(input)
+actualOutput = Basket.basketItems.length;
 
 //Assert
 
@@ -20,11 +20,11 @@ result = assertEquals(actualOutput, expectedOutput);
 console.log(`Test ${result ? 'PASSED' : 'FAILED'}`)
 
 //Clean up
-basket.basketItems = [];
+Basket.basketItems = [];
 result = undefined;
 actualOutput = undefined;
 
-//Test 2 Removing the item form the basket
+//Test 2 Removing the item form the Basket
 
 //Arrange
 input = {
@@ -32,9 +32,9 @@ input = {
 }
 expectedOutput = 0
 //Act
-basket.addToBasket(input)
-basket.removeFromBasket(input);
-actualOutput = basket.basketItems.length;
+Basket.addToBasket(input)
+Basket.removeFromBasket(input);
+actualOutput = Basket.basketItems.length;
 
 //Assert
 
@@ -43,11 +43,11 @@ result = assertEquals(actualOutput, expectedOutput);
 console.log(`Test ${result ? 'PASSED' : 'FAILED'}`)
 
 //Clean up
-basket.basketItems = [];
+Basket.basketItems = [];
 result = undefined;
 actualOutput = undefined;
 
-//Test 3 Removing certain item form the basket
+//Test 3 Removing certain item form the Basket
 
 //Arrange
 let input1 = {
@@ -63,11 +63,11 @@ let input3 = {
 }
 expectedOutput = -1;
 //Act
-basket.basketItems = [input1, input2, input3];
-//basket.basketItems = [input2];
+Basket.basketItems = [input1, input2, input3];
+//Basket.basketItems = [input2];
 
-basket.removeFromBasket(input2);
-actualOutput = basket.basketItems.indexOf(input2);
+Basket.removeFromBasket(input2);
+actualOutput = Basket.basketItems.indexOf(input2);
 
 //Assert
 
@@ -76,6 +76,7 @@ result = assertEquals(actualOutput, expectedOutput);
 console.log(`Test ${result ? 'PASSED' : 'FAILED'}`)
 
 //Clean up
-basket.basketItems = [];
+Basket.basketItems = [];
 result = undefined;
 actualOutput = undefined;
+
