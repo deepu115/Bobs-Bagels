@@ -47,7 +47,7 @@ Basket.basketItems = [];
 result = undefined;
 actualOutput = undefined;
 
-//Test 3 Removing certain item form the Basket
+//Test 3 Removing certain item from the Basket
 
 //Arrange
 let input1 = {

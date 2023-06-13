@@ -1,4 +1,7 @@
 //NEED TO CREATE INSTANCE OF CLASS TO ACTUALLY USE IT
+
+//const Item = require('./Item');
+
 class Basket {
 
     constructor(basketItems = [], maxCapacity = 1) {
@@ -22,7 +25,16 @@ class Basket {
     isBasketFull() {
         return this.basketItems.length === this.maxCapacity;
     }
+
+    increaseBasketCapacityTo(num) {
+        if (typeof num === 'number' && num > this.maxCapacity)
+            this.maxCapacity = num;
+    }
+
+    itemExists(item) {
+        return this.basketItems.indexOf(item) !== -1;
+    }
 }
 
 
-module.exports = Basket;
+module.exports = Basket;    
