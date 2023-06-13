@@ -1,11 +1,16 @@
+//NEED TO CREATE INSTANCE OF CLASS TO ACTUALLY USE IT
 class Basket {
 
-    constructor(basketItems = [],) {
-        this.basketItems = []
+    constructor(basketItems = [], maxCapacity = 1) {
+        this.basketItems = [];
+        this.maxCapacity = 1;
     }
 
     addToBasket(item) {
-        this.basketItems.push(item);
+        if (this.basketItems.length < this.maxCapacity) {
+            this.basketItems.push(item);
+        }
+
     }
 
     removeFromBasket(item) {
@@ -13,4 +18,11 @@ class Basket {
 
         this.basketItems.splice(index, 1);
     }
+
+    isBasketFull() {
+        return this.basketItems.length === this.maxCapacity;
+    }
 }
+
+
+module.exports = Basket;
